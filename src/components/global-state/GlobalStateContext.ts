@@ -4,9 +4,9 @@ import { Action, GlobalState as StateType } from "./@types/GlobalStateTypes";
 const defaultStateValue: StateType = {
   targetPoint: { x: 0, y: 0 },
   triangle: [
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
-    { x: 0, y: 0 },
+    { x: 100, y: -100 },
+    { x: -100, y: -100 },
+    { x: 0, y: 100 },
   ]
 };
 
