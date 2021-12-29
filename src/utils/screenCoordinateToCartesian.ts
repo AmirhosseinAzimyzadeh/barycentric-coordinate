@@ -6,7 +6,7 @@ export default function screenCoordinateToCartesian(
   height: number,
 ): Point {
   return {
-    x: screenPoint.x - (width / 2),
-    y: screenPoint.y - (height / 2)
+    x: (width / 2) - screenPoint.x,
+    y: (height / 2) - screenPoint.y,
   };
 }
