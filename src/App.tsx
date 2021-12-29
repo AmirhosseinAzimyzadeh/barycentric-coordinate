@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import Point from "./components/point/Point";
-import GlobalState from "./components/global-state/GlobalState";
 import CartesianBoard from "./components/cartesian-board/CartesianBoard";
+import Triangle from "./components/triangle/Triangle";
+import GlobalStateContext from "./components/global-state/GlobalStateContext";
 
 function App() {
+  const [data] = useContext(GlobalStateContext);
   return (
-    <GlobalState>
+    <>
       <CartesianBoard />
-      <Point isTargetPoint x={100} y={200} />
-    </GlobalState>
+      <Point isTargetPoint point={data.targetPoint} />
+      <Triangle />
+    </>
   );
 }
 
