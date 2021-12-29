@@ -1,0 +1,15 @@
+.point {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition-property: box-shadow, width, height; 
+  transition-duration: 0.3s; 
+  transition-timing-function: ease-out;
+  cursor: grab;
+}
+
+.point:hover {
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
