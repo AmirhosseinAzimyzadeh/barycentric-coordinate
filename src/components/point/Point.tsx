@@ -35,8 +35,16 @@ export default function Point(props: Props) {
         type: ActionTypes.TARGET_POINT,
         payload: cartesianPoint,
       });
+    } else if (props.index !== undefined) {
+      dispatch({
+        type: ActionTypes.TRIANGLE,
+        payload: {
+          index: props.index,
+          trianglePoint: cartesianPoint,
+        }
+      })
     }
-  }, [dispatch, props.isTargetPoint]);
+  }, [dispatch, props.index, props.isTargetPoint]);
 
   useEffect(() => {
     const mouseUpListener = () => {
