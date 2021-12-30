@@ -8,6 +8,7 @@ body {
   background-color: rgba(25, 25, 25, 1);
   color: wheat;
   user-select: none;
+  overflow: hidden;
 }
 
 code {
