@@ -21,6 +21,15 @@ export default function mainReducer(state: GlobalState, action: Action): GlobalS
         ...state,
         triangle,
       };
+    case ActionTypes.RESET:
+      return {
+        targetPoint: { x: 0, y: 0 },
+        triangle: [
+          { x: 100, y: -100 },
+          { x: -100, y: -100 },
+          { x: 0, y: 100 },
+        ]
+      };
     default:
       console.warn('Invalid Action Type');
       return state;
