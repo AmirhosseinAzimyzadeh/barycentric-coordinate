@@ -1,8 +1,9 @@
-import { useContext, useCallback, useEffect } from "react";
+import { useContext, useCallback, useEffect, useState } from "react";
 import cartesianCoordinateToScreen from "../../utils/cartesianCoordinateToScreen";
 import screenCoordinateToCartesian from "../../utils/screenCoordinateToCartesian";
 import { ActionTypes, Point as PointType } from "../global-state/@types/GlobalStateTypes";
 import GlobalStateContext from "../global-state/GlobalStateContext";
+import Coordinate from "./Coordinate";
 import styles from './point.module.css';
 
 interface Props {
@@ -13,6 +14,7 @@ interface Props {
 
 export default function Point(props: Props) {
   const dispatch = useContext(GlobalStateContext)[1];
+  const [showCoordinate, setShowCoordinate] = useState(false);
 
   const { x, y } = cartesianCoordinateToScreen(
     props.point,
@@ -67,8 +69,13 @@ export default function Point(props: Props) {
       onMouseDown={() => {
         window.addEventListener('mousemove', mouseMoveListener);
       }}
+      onMouseEnter={() => { setShowCoordinate(true); }}
+      onMouseLeave={() => { setShowCoordinate(false); }}
     >
-
+      <Coordinate
+        point={props.point}
+        show={showCoordinate}
+      />
     </div>
   );
 }

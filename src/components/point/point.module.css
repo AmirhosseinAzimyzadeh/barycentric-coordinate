@@ -6,6 +6,7 @@
   transition-duration: 0.3s; 
   transition-timing-function: ease-out;
   cursor: grab;
+  z-index: 1;
 }
 
 .point:hover {
