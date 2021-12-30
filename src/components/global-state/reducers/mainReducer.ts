@@ -4,11 +4,9 @@ import {
   ActionTypes,
   convertType,
   Point,
-  Triangle,
 } from "../@types/GlobalStateTypes";
 
 export default function mainReducer(state: GlobalState, action: Action): GlobalState {
-  console.log('reducer called');
   switch (action.type) {
     case ActionTypes.TARGET_POINT:
       return {
@@ -16,9 +14,12 @@ export default function mainReducer(state: GlobalState, action: Action): GlobalS
         targetPoint: convertType<Point>(action.payload),
       };
     case ActionTypes.TRIANGLE:
+      const triAction = convertType<{ index: number, trianglePoint: Point }>(action.payload);
+      const { triangle } = state;
+      triangle[triAction.index] = triAction.trianglePoint;
       return {
         ...state,
-        triangle: convertType<Triangle>(action.payload),
+        triangle,
       };
     default:
       console.warn('Invalid Action Type');
