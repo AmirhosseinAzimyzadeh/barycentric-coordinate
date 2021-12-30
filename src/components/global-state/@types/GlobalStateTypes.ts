@@ -23,7 +23,7 @@ export enum ActionTypes {
 
 export type Action = {
   type: ActionTypes,
-  payload: Point | Triangle,
+  payload: Point | {index: number, trianglePoint: Point},
 }
 
 export function convertType<T>(t: any): T {
