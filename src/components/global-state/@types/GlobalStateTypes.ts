@@ -19,6 +19,7 @@ export interface GlobalState {
 export enum ActionTypes {
   TARGET_POINT,
   TRIANGLE,
+  RESET,
 };
 
 export type Action = {
