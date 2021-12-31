@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/barycentric-coordinate/static/css/main.1713eb30.css",
-    "main.js": "/barycentric-coordinate/static/js/main.a6918c6e.js",
+    "main.css": "/barycentric-coordinate/static/css/main.59f75e41.css",
+    "main.js": "/barycentric-coordinate/static/js/main.2ff36acb.js",
     "static/js/787.de26efc7.chunk.js": "/barycentric-coordinate/static/js/787.de26efc7.chunk.js",
     "index.html": "/barycentric-coordinate/index.html",
-    "main.1713eb30.css.map": "/barycentric-coordinate/static/css/main.1713eb30.css.map",
-    "main.a6918c6e.js.map": "/barycentric-coordinate/static/js/main.a6918c6e.js.map",
+    "main.59f75e41.css.map": "/barycentric-coordinate/static/css/main.59f75e41.css.map",
+    "main.2ff36acb.js.map": "/barycentric-coordinate/static/js/main.2ff36acb.js.map",
     "787.de26efc7.chunk.js.map": "/barycentric-coordinate/static/js/787.de26efc7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1713eb30.css",
-    "static/js/main.a6918c6e.js"
+    "static/css/main.59f75e41.css",
+    "static/js/main.2ff36acb.js"
   ]
 }
