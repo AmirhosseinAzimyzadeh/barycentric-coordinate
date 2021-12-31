@@ -24,7 +24,7 @@ export default function InfoPanel() {
         !isOpen ? (<></>) : (
           <>
             <h3>Barycentric Coordinate</h3>
-            <p>Grab a point and move it to see how numbers in this coordinate system changes</p>
+            <p>Grab a point and move it to see changes in this coordinate system</p>
             <a href='https://github.com/AmirhosseinAzimyzadeh/barycentric-coordinate'>
               Source code (Github)
             </a>
