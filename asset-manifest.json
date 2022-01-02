@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/barycentric-coordinate/static/css/main.59f75e41.css",
-    "main.js": "/barycentric-coordinate/static/js/main.88fd37a0.js",
+    "main.css": "/barycentric-coordinate/static/css/main.5c099656.css",
+    "main.js": "/barycentric-coordinate/static/js/main.b3d378ae.js",
     "static/js/787.de26efc7.chunk.js": "/barycentric-coordinate/static/js/787.de26efc7.chunk.js",
     "index.html": "/barycentric-coordinate/index.html",
-    "main.59f75e41.css.map": "/barycentric-coordinate/static/css/main.59f75e41.css.map",
-    "main.88fd37a0.js.map": "/barycentric-coordinate/static/js/main.88fd37a0.js.map",
+    "main.5c099656.css.map": "/barycentric-coordinate/static/css/main.5c099656.css.map",
+    "main.b3d378ae.js.map": "/barycentric-coordinate/static/js/main.b3d378ae.js.map",
     "787.de26efc7.chunk.js.map": "/barycentric-coordinate/static/js/787.de26efc7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.59f75e41.css",
-    "static/js/main.88fd37a0.js"
+    "static/css/main.5c099656.css",
+    "static/js/main.b3d378ae.js"
   ]
 }
