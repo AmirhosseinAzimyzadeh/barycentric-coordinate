@@ -15,6 +15,7 @@ interface Props {
 export default function Point(props: Props) {
   const dispatch = useContext(GlobalStateContext)[1];
   const [showCoordinate, setShowCoordinate] = useState(false);
+  const [trackMove, setTrackMove] = useState(false);
 
   const { x, y } = cartesianCoordinateToScreen(
     props.point,
@@ -25,8 +26,8 @@ export default function Point(props: Props) {
   const left: string = `${(x / window.innerWidth) * 100}%`;
   const top: string = `${(y / window.innerHeight) * 100}%`;
 
-  const mouseMoveListener = useCallback((e: MouseEvent) => {
-    const screenPoint: PointType = { x: e.clientX, y: e.clientY }
+  const pointerMoveHandler = useCallback((x: number, y: number) => {
+    const screenPoint: PointType = { x, y }
     const cartesianPoint: PointType = screenCoordinateToCartesian(
       screenPoint,
       window.innerWidth,
@@ -49,12 +50,26 @@ export default function Point(props: Props) {
   }, [dispatch, props.index, props.isTargetPoint]);
 
   useEffect(() => {
-    const mouseUpListener = () => {
-      window.removeEventListener('mousemove', mouseMoveListener);
+    const mouseHandler = (e: MouseEvent) => {
+      pointerMoveHandler(e.clientX, e.clientY);
     };
-    window.addEventListener('mouseup', mouseUpListener);
-    return () => { window.removeEventListener('mouseup', mouseUpListener); }
-  }, [mouseMoveListener]);
+    const touchHandler = (e: TouchEvent) => {
+      pointerMoveHandler(e.touches[0].clientX, e.touches[0].clientY);
+    };
+
+    if (trackMove) {
+      window.addEventListener('mousemove', mouseHandler);
+      window.addEventListener('touchmove', touchHandler);
+    } else {
+      window.removeEventListener('mousemove', mouseHandler);
+      window.removeEventListener('touchmove', touchHandler);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', mouseHandler);
+      window.removeEventListener('touchmove', touchHandler);
+    };
+  }, [trackMove, pointerMoveHandler])
 
   return (
     <div
@@ -66,11 +81,18 @@ export default function Point(props: Props) {
         left,
         top,
       }}
-      onMouseDown={() => {
-        window.addEventListener('mousemove', mouseMoveListener);
-      }}
+      onMouseDown={() => { setTrackMove(true); }}
+      onMouseUp={() => { setTrackMove(false); }}
       onMouseEnter={() => { setShowCoordinate(true); }}
       onMouseLeave={() => { setShowCoordinate(false); }}
+      onTouchStart={() => {
+        setShowCoordinate(true);
+        setTrackMove(true);
+      }}
+      onTouchEnd={() => {
+        setShowCoordinate(false);
+        setTrackMove(false);
+      }}
     >
       <Coordinate
         point={props.point}
