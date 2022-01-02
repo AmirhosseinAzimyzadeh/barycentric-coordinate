@@ -15,7 +15,7 @@ export default function Coordinate(props: Props) {
   return (
     <span
       style={{
-        position: 'relative',
+        position: 'absolute',
         padding: '4px 16px',
         backgroundColor: 'black',
         borderRadius: 5,
@@ -26,9 +26,9 @@ export default function Coordinate(props: Props) {
         transition: '0.3s',
       }}
     >
-      <span>{-(props.point.x)}</span>
+      <span>{-(props.point.x.toFixed(1))}</span>
       ,
-      <span>{props.point.y}</span>
+      <span>{props.point.y.toFixed(1)}</span>
     </span>
   )
 }
