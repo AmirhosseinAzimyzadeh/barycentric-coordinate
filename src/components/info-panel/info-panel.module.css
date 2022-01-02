@@ -14,7 +14,6 @@
   left: 50%;
   top: 16px;
   width: 500px;
-  max-width: 90vw;
   height: 50px;
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -45,4 +44,12 @@
 .container[data-is-open='true'] {
   height: auto;
   align-items: flex-start;
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 100vw;
+    border-radius: 0;
+    top: 0;
+  }
 }
